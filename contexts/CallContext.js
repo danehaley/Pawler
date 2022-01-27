@@ -8,7 +8,11 @@ function CallContext() {
 }
 
 function AppContextProvider({ children }) {
-  const value = { appName: "Pawler" };
+  const value = {
+    appName: "Pawler",
+    createdBy: "Dane Dobra",
+    createdByEmail: "danehaley22@gmail.com",
+  };
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 }
 
