@@ -10,6 +10,8 @@ function CallContext() {
 function AppContextProvider({ children }) {
   const value = {
     appName: "Pawler",
+    appVer: "0.0.1",
+    appYear: "2022",
     createdBy: "Dane Dobra",
     createdByEmail: "danehaley22@gmail.com",
   };
