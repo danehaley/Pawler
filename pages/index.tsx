@@ -12,11 +12,10 @@ const Home: NextPage = () => {
         <div className="col-span-8">
           <Header className="" />
         </div>
-        <main className="col-span-8 grid relative flex-grow">
+        <main className="col-span-8 grid relative flex-grow h-nearly-full">
           <Image
             src={hero}
-            height="650"
-            width="1600"
+            layout="fill"
             priority={true}
             objectFit="cover"
             className="shadow-inner"

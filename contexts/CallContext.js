@@ -10,6 +10,7 @@ function CallContext() {
 function AppContextProvider({ children }) {
   const value = {
     appName: "Pawler",
+    appUrl: "http://localhost:3000",
     appVer: "0.0.1",
     appYear: "2022",
     createdBy: "Dane Dobra",

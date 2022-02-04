@@ -1,6 +1,10 @@
 import "../styles/globals.css";
 import { AppContextProvider } from "../contexts/CallContext";
 
+export function reportWebVitals(metric) {
+  console.log(metric);
+}
+
 function MyApp({ Component, pageProps }) {
   return (
     <AppContextProvider>

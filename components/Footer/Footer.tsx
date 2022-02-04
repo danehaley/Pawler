@@ -1,7 +1,42 @@
-import { CallContext } from "../../contexts/CallContext";
 import Image from "next/image";
-import logo from "../../public/logo_black.svg";
 import Link from "next/link";
+
+// Context Import
+import { CallContext } from "../../contexts/CallContext";
+
+// SVG Import
+import logo from "../../public/logo_black.svg";
+import twitterLogo from "../../public/twitter.svg";
+import instagramLogo from "../../public/instagram.svg";
+import facebookLogo from "../../public/facebook.svg";
+
+const socialMediaLogos = [
+  ["twitter", twitterLogo, "https://twitter.com"],
+  ["instagram", instagramLogo, "https://instagram.com"],
+  ["facebook", facebookLogo, "https://facebook.com"],
+];
+
+const socialMediaLinks = () => {
+  let res = [];
+  for (let i = 0; i < socialMediaLogos.length; i++) {
+    res.push(
+      <li
+        className="pt-1.5 cursor-pointer hover:text-zinc-500"
+        key={socialMediaLogos[i][0]}
+      >
+        <Link href={socialMediaLogos[i][2]}>
+          <Image
+            src={socialMediaLogos[i][1]}
+            height="25"
+            width="25"
+            className="filter brightness-200 hover:brightness-100"
+          ></Image>
+        </Link>
+      </li>
+    );
+  }
+  return res;
+};
 
 type FooterProps = {
   className: string;
@@ -10,7 +45,9 @@ type FooterProps = {
 const Footer = ({ className }: FooterProps) => {
   const context = CallContext();
   return (
-    <footer className={`bottom-0 z-50 bg-zinc-50/80 shadow-topMd`}>
+    <footer
+      className={`${className} bottom-0 z-50 bg-zinc-50/80 shadow-topMd pt-1`}
+    >
       <nav className="container flex items-center py-1 m-auto">
         <div className="pt-2"></div>
         <div className="py-2">
@@ -40,9 +77,7 @@ const Footer = ({ className }: FooterProps) => {
           </h3>
         </div>
         <ul className="hidden sm:flex flex-1 justify-end items-center gap-3 uppercase text-xs mt-1.5 text-black">
-          <li className="pt-1.5 cursor-pointer hover:text-zinc-500 ml-6"></li>
-          <li className="pt-1.5 cursor-pointer hover:text-zinc-500"></li>
-          <li className="pt-1.5 cursor-pointer hover:text-zinc-500"></li>
+          {socialMediaLinks()}
         </ul>
       </nav>
     </footer>

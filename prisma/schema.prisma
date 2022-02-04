@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Breed {
+  name        String   @id @db.VarChar(32)
+  personality String[] @db.VarChar(32)
+  pets        Pet[]
+  species     String   @db.VarChar(32)
+}
+
+model Pet {
+  // Pet Info
+  id                  Int     @id @default(autoincrement())
+  name                String  @default("No Name") @db.VarChar(32)
+  gender              String  @db.VarChar(6)
+  age                 String  @db.VarChar(9)
+  health_check_passed Boolean
+  health_check_notes  String  @default("") @db.VarChar(64)
+
+  // Pet Listing Info
+  status      Boolean @default(true)
+  image       String  @default("../public/hero.jpeg") @db.VarChar(128)
+  description String  @db.VarChar(256)
+  price       Float
+
+  // Location
+  suburb     String @db.VarChar(32)
+  state_code String @db.VarChar(3)
+
+  // Safety & Special Considerations
+  child_safe      Boolean @default(false)
+  dog_safe        Boolean @default(false)
+  cat_safe        Boolean @default(false)
+  other_pet_safe  Boolean @default(false)
+  home_alone_safe Boolean @default(false)
+  special_needs   Boolean @default(false)
+
+  // Breed
+  Breed     Breed?  @relation(fields: [breedName], references: [name])
+  breedName String? @db.VarChar(32)
+}
