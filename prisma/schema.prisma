@@ -8,25 +8,37 @@ datasource db {
 }
 
 model Breed {
-  name        String   @id @db.VarChar(32)
-  personality String[] @db.VarChar(32)
-  pets        Pet[]
-  species     String   @db.VarChar(32)
+  name           String  @id @db.VarChar(32)
+  size           String  @db.VarChar(32)
+  exercise_needs String  @db.VarChar(32)
+  shedding_amt   String  @db.VarChar(32)
+  coat_length    String  @db.VarChar(32)
+  traits         Trait[]
+  pets           Pet[]
+  species        String  @db.VarChar(32)
+}
+
+model Trait {
+  id     Int     @id @default(autoincrement())
+  name   String  @unique @db.VarChar(32)
+  pets   Pet[]
+  breeds Breed[]
 }
 
 model Pet {
   // Pet Info
-  id                  Int     @id @default(autoincrement())
-  name                String  @default("No Name") @db.VarChar(32)
-  gender              String  @db.VarChar(6)
-  age                 String  @db.VarChar(9)
-  health_check_passed Boolean
-  health_check_notes  String  @default("") @db.VarChar(64)
+  id                    Int     @id @default(autoincrement())
+  name                  String  @default("No Name") @db.VarChar(32)
+  gender                String  @db.VarChar(6)
+  age                   String  @db.VarChar(9)
+  health_check_passed   Boolean
+  health_check_notes    String  @default("") @db.VarChar(64)
+  novice_owner_approved Boolean
 
   // Pet Listing Info
   status      Boolean @default(true)
   image       String  @default("../public/hero.jpeg") @db.VarChar(128)
-  description String  @db.VarChar(256)
+  description String  @db.VarChar(1024)
   price       Float
 
   // Location
@@ -44,4 +56,5 @@ model Pet {
   // Breed
   Breed     Breed?  @relation(fields: [breedName], references: [name])
   breedName String? @db.VarChar(32)
+  traits    Trait[]
 }

@@ -1,13 +1,17 @@
 import type { NextPage } from "next";
-import Image from "next/image";
+import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import { server } from "../config";
-import { CallContext } from "../contexts/CallContext";
+import Card from "../components/Card/Card";
 
 const List: NextPage = ({ pets }: any) => {
   return (
     <body>
+      <Head>
+        <title>{`Listings - Pawler`}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="grid grid-cols-8">
         <div className="col-span-8">
           <Header className="" />
@@ -17,24 +21,9 @@ const List: NextPage = ({ pets }: any) => {
             return (
               <div
                 key={pet.id}
-                className="shadow hover:shadow-lg ease-in-out duration-200 h-fit basis-1/4 lg:basis-52"
+                className={`shadow hover:shadow-lg hover:scale-101 origin-center ease-in-out duration-200 h-fit basis-1/4 lg:basis-52 rounded-x`}
               >
-                <a href={`/pet/${pet.id}`}>
-                  <Image
-                    src={pet.image}
-                    height="220"
-                    width="220"
-                    className="w-full"
-                    priority={true}
-                    objectFit="cover"
-                  />
-                  <div className="p-2">
-                    <h1>{pet.name}</h1>
-                    <h3 className="text-sm">{pet.breedName}</h3>
-                    <h2 className="text-xs text-gray-500">{pet.age} Old</h2>
-                    <h2 className="text-xs text-gray-500">{pet.gender}</h2>
-                  </div>
-                </a>
+                <Card pet={pet} link={`/pet/${pet.id}`} />
               </div>
             );
           })}

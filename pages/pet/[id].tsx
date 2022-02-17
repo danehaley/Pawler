@@ -3,9 +3,7 @@ import Image from "next/image";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import Profile from "../../components/Profile/Profile";
-import { useRouter } from "next/router";
 import { server } from "../../config";
-import { CallContext } from "../../contexts/CallContext";
 
 const Pet: NextPage = ({ petInfo }: any) => {
   console.log(petInfo);
@@ -15,7 +13,7 @@ const Pet: NextPage = ({ petInfo }: any) => {
         <div className="col-span-8">
           <Header className="" />
         </div>
-        <main className="col-span-4 container flex flex-col items-left my-4 justify-left mx-16">
+        <main className="col-span-8 sm:col-span-6 container flex flex-col items-left my-8 justify-left mx-16 shadow rounded-xl w-auto">
           <Profile petInfo={petInfo} />
         </main>
         <div className="col-span-8">

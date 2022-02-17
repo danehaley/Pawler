@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Footer from "../components/Footer/Footer";
 import Image from "next/image";
 import hero from "../public/hero2.jpeg";
@@ -8,6 +9,9 @@ import { SearchBarSimplified } from "../components/Searchbar/Searchbar";
 const Home: NextPage = () => {
   return (
     <body className="flex flex-col min-h-screen ">
+      <Head>
+        <title>{`Pawler`}</title>
+      </Head>
       <div className="grid grid-cols-8">
         <div className="col-span-8">
           <Header className="" />

@@ -5,9 +5,22 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fade: {
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
+        },
+      },
+      animation: {
+        fade: "fade 1s",
+      },
+      scale: {
+        101: "1.01",
+      },
       height: {
         "nearly-full": "85vh",
         "half-full": "50vh",
+        profile: "26.7rem",
       },
       boxShadow: {
         topMd:
@@ -19,7 +32,7 @@ module.exports = {
       fontSize: {
         xxs: ".25rem",
       },
-      width: { 128: "52rem" },
+      width: { 128: "52rem", profile: "46.9rem" },
       colors: {
         hyperlink: "#0066CC",
         pawler: {

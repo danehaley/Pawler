@@ -14,24 +14,32 @@ const Header = ({ className }: HeaderProps) => {
     <header className={`${className} bg-zinc-50/80 shadow`}>
       <nav className="container flex items-center py-1 justify-center m-auto">
         <div className="py-1 cursor-pointer">
-          <a href="/">
-            <Image src={logo} height="75" width="75" priority={true} />
-          </a>
+          <Link href="/" passHref>
+            <Image
+              src={logo}
+              height="75"
+              width="75"
+              priority={true}
+              alt="Welcome to Pawler!"
+            />
+          </Link>
         </div>
         <h1 className="text-3xl font-bold pl-1 cursor-pointer">
           <Link href="/">{context.appName}</Link>
         </h1>
         <ul className="hidden sm:flex flex-1 justify-start items-center gap-3 uppercase text-xs mt-1.5 text-black">
-          <li className="pt-1.5 cursor-pointer hover:text-zinc-500 ml-6">
-            <Link href="/search">Search</Link>
-          </li>
+          <Link href="/search" passHref>
+            <li className="pt-1.5 cursor-pointer hover:text-zinc-500 ml-6">
+              Search
+            </li>
+          </Link>
           <li className="pt-1.5 cursor-pointer hover:text-zinc-500">
             Questionaire
           </li>
           <li className="pt-1.5 cursor-pointer hover:text-zinc-500">About</li>
         </ul>
         <ul className="hidden sm:flex flex-1 justify-end items-center text-black gap-2 text-xs">
-          <Link href="/login">
+          <Link href="/login" passHref>
             <button
               type="button"
               className="rounded-lg cursor-pointer uppercase bg-pawler-primary py-2 px-4 hover:bg-pawler-primaryHover drop-shadow-sm ring-1 ring-slate-900/5"
@@ -39,7 +47,7 @@ const Header = ({ className }: HeaderProps) => {
               Login
             </button>
           </Link>
-          <Link href="/register">
+          <Link href="/register" passHref>
             <button
               type="button"
               className="rounded-lg cursor-pointer uppercase bg-pawler-primary py-2 px-4 hover:bg-pawler-primaryHover drop-shadow-sm ring-1 ring-slate-900/5"
