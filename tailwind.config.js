@@ -18,7 +18,7 @@ module.exports = {
         101: "1.01",
       },
       height: {
-        "nearly-full": "85vh",
+        "nearly-full": "82.5vh",
         "half-full": "50vh",
         profile: "26.7rem",
       },

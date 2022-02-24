@@ -1,0 +1,133 @@
+const testDescription =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae mi eget mauris dignissim rhoncus. Integer ullamcorper diam mi, nec consectetur lectus tristique vel. Aenean aliquet fermentum pulvinar. Duis sit amet convallis urna, condimentum sagittis lorem. Quisque neque nunc, vestibulum in pharetra et, efficitur non ex. Duis vitae leo non risus rhoncus euismod. Phasellus elementum elit sit amet metus tempus scelerisque. Ut eget velit mauris. Nullam non pharetra est. Phasellus convallis mauris tellus, et viverra turpis semper id. Praesent massa orci, bibendum nec accumsan quis, auctor nec tellus. Cras enim magna, blandit blandit suscipit in, ultrices et nibh. Ut porta, diam gravida eleifend sollicitudin, odio sem laoreet quam, quis pellentesque mi libero at urna. Mauris nisl orci, semper finibus sodales non, sagittis in nulla. Duis et lectus nec dolor bibendum eleifend eu in risus. Integer in mi pulvinar, fermentum purus vel, mattis libero. Aenean consequat nibh in turpis faucibus malesuada. Aliquame";
+
+const pets = [
+  {
+    name: "Louie",
+    gender: "Male",
+    age: "12 Years",
+    traits: {
+      connect: [
+        { name: "Stubborn" },
+        { name: "Relaxed" },
+        { name: "Outgoing" },
+      ],
+    },
+    image: [
+      "/../public/pets/1.jpeg",
+      "/../public/pets/1.jpeg",
+      "/../public/pets/1.jpeg",
+      "/../public/pets/1.jpeg",
+    ],
+    status: true,
+    description: testDescription,
+    price: 400.0,
+    suburb: "Boronia",
+    state_code: "VIC",
+    health_check_passed: true,
+    novice_owner_approved: true,
+  },
+  {
+    name: "Robin",
+    gender: "Male",
+    age: "6 Months",
+    traits: {
+      connect: [{ name: "Outgoing" }, { name: "Relaxed" }, { name: "Gentle" }],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/2.jpg"],
+    status: true,
+    description: testDescription,
+    price: 300.0,
+    suburb: "Coolum",
+    state_code: "QLD",
+    novice_owner_approved: true,
+  },
+  {
+    name: "Mickie",
+    gender: "Male",
+    age: "4 Years",
+    traits: {
+      connect: [{ name: "Anxious" }, { name: "Playful" }, { name: "Goofy" }],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/3.png"],
+    description: testDescription,
+    status: true,
+    price: 395.0,
+    suburb: "Boronia",
+    state_code: "VIC",
+    novice_owner_approved: true,
+  },
+  {
+    name: "Minty",
+    gender: "Female",
+    age: "3 Years",
+    traits: {
+      connect: [{ name: "Goofy" }, { name: "Playful" }, { name: "Protective" }],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/8.jpeg"],
+    description: testDescription,
+    status: true,
+    price: 999.0,
+    suburb: "Marcoola",
+    state_code: "QLD",
+    novice_owner_approved: false,
+  },
+  {
+    name: "Molli",
+    gender: "Female",
+    age: "2 Years",
+    traits: {
+      connect: [
+        { name: "Protective" },
+        { name: "Playful" },
+        { name: "Stubborn" },
+      ],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/4.jpeg"],
+    description: testDescription,
+    status: true,
+    price: 302.0,
+    suburb: "Darwin",
+    state_code: "NT",
+    novice_owner_approved: false,
+  },
+
+  {
+    name: "Leo",
+    gender: "Male",
+    age: "2 Years",
+    traits: {
+      connect: [{ name: "Sassy" }, { name: "Smart" }, { name: "Outgoing" }],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/7.jpeg"],
+    description: testDescription,
+    status: true,
+    price: 102.0,
+    suburb: "Marcoola",
+    state_code: "QLD",
+    novice_owner_approved: false,
+  },
+  {
+    name: "Mox",
+    gender: "Female",
+    age: "5 Years",
+    traits: {
+      connect: [{ name: "Smart" }, { name: "Affectionate" }],
+    },
+    health_check_passed: true,
+    image: ["/../public/pets/5.jpg"],
+    description: testDescription,
+    status: true,
+    price: 0.0,
+    suburb: "Wagga Wagga",
+    state_code: "NSW",
+    novice_owner_approved: false,
+  },
+];
+
+export default pets;

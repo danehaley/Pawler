@@ -6,34 +6,25 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const prisma = new PrismaClient();
-  const requestedId = req.query.id;
+  const requestedBreedId = req.query.id;
 
   // Check that not a string array & is a number when parsed
-  if (typeof requestedId === "string" && !isNaN(parseInt(requestedId))) {
-    let pets: any = await prisma.pet.findMany({
-      where: { id: parseInt(requestedId) },
+  if (
+    typeof requestedBreedId === "string" &&
+    !isNaN(parseInt(requestedBreedId))
+  ) {
+    let breed: any = await prisma.breed.findUnique({
+      where: { id: parseInt(requestedBreedId) },
       include: {
         traits: true,
-        Breed: {
-          select: {
-            id: true,
-          },
-        },
       },
     });
 
-    // Change name of filtered "Breed" key to "traits_breed"
-    pets = pets.map((pet: any) => {
-      pet["breedId"] = pet["Breed"].id;
-      delete pet["Breed"];
-      return pet;
-    });
-
-    if (pets.length === 0) {
+    if (breed.length === 0) {
       res.status(400).send("Requested ID does not exist.");
       res.end();
     }
-    res.status(200).json(pets[0]);
+    res.status(200).json(breed);
     res.end();
   } else {
     res

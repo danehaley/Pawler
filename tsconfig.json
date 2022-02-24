@@ -16,6 +16,6 @@
     "jsx": "preserve",
     "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "contexts/CallContext.jsx", "pages/_app.tsx", "pages/_app.ts", "pages/_app.ts", "contexts/AppContext.ts", "contexts/CallContext.js", "pages/index.js", "prisma/prisma.jsx", "pages/search.tsx", "pages/search.tsx", "pages/search.tsx", "pages/api/pets.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "contexts/CallContext.jsx", "pages/_app.tsx", "pages/_app.ts", "pages/_app.ts", "contexts/AppContext.ts", "contexts/CallContext.js", "pages/index.js", "prisma/prisma.jsx", "pages/search.tsx", "pages/search.tsx", "pages/search.tsx", "pages/api/pets.js", "components/Popover/BreedPopover.jsx", "components/Popover/BreedPopover.jsx"],
   "exclude": ["node_modules"]
 }

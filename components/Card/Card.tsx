@@ -6,7 +6,7 @@ const Card = ({ pet, link }: any) => {
     <Link href={link}>
       <div className="cursor-pointer">
         <Image
-          src={pet.image}
+          src={pet.image[0]}
           height="220"
           width="220"
           quality={"40"}

@@ -11,8 +11,11 @@
     "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
+    "@cloudinary/react": "^1.1.0",
+    "@cloudinary/url-gen": "^1.6.0",
     "@prisma/client": "^3.8.1",
     "apollo-server-micro": "^3.6.2",
+    "cloudinary": "^1.28.1",
     "cors": "^2.8.5",
     "graphql": "^16.3.0",
     "micro-cors": "^0.1.1",
@@ -21,7 +24,8 @@
     "next-compose-plugins": "^2.2.1",
     "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-tiny-popover": "^7.0.1"
   },
   "devDependencies": {
     "@types/cors": "^2.8.12",

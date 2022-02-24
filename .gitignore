@@ -41,3 +41,5 @@ prisma/migrations/20220202140817_initial_migration/migration.sql
 prisma/migrations/20220202141559_added_species_table/migration.sql
 prisma/migrations/20220203003323_remove_species_table/migration.sql
 prisma/migrations/20220203073100_new_breed_id/migration.sql
+public/pets/7.jpeg
+public/pets/7.jpeg

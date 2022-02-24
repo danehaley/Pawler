@@ -21,7 +21,7 @@ const List: NextPage = ({ pets }: any) => {
             return (
               <div
                 key={pet.id}
-                className={`shadow hover:shadow-lg hover:scale-101 origin-center ease-in-out duration-200 h-fit basis-1/4 lg:basis-52 rounded-x`}
+                className={`shadow hover:shadow-lg hover:scale-101 origin-center ease-in-out duration-200 h-fit basis-1/4 lg:basis-52 rounded-xl`}
               >
                 <Card pet={pet} link={`/pet/${pet.id}`} />
               </div>

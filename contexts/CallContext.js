@@ -8,11 +8,13 @@ function CallContext() {
 }
 
 function AppContextProvider({ children }) {
+  const dateToday = new Date();
+
   const value = {
     appName: "Pawler",
     appUrl: "http://localhost:3000",
     appVer: "0.0.1",
-    appYear: "2022",
+    appYear: dateToday.getFullYear(),
     createdBy: "Dane Dobra",
     createdByEmail: "danehaley22@gmail.com",
     ipsum:
